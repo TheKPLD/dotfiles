@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/kdion/git/puppet_foreman/mz_ipaclient/spec/fixtures/modules/augeasproviders/augeas'
+let g:netrw_dirhist_2='/Users/kdion/git/automation/foreman-puppetfile'
+let g:netrw_dirhist_3='/Users/kdion/git/puppet_foreman/puppetfile'
+let g:netrw_dirhist_4='/Users/kdion/git/puppet_foreman/mz_profile/manifests/dsp'
