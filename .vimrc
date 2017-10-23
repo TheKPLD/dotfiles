@@ -16,12 +16,6 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgree
 match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * redraw!
 
-"Python specific
-"et cc=72,100
-"ighlight colorcolumn ctermbg=blue
-" Set <F2> to create indentation blocks
-"inoremap <F2> """"""
-
 " I honestly forgot what this dones
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
