@@ -5,7 +5,8 @@ alias strace='dtruss'
 alias md5sum='md5'
 alias secho='stty echo'
 alias rsync='rsync --exclude=".git*" --exclude="*.pyc"'
-alias gitpushup='git push -u $(git remote | grep -m 1 upstream || echo origin) `git symbolic-ref --short HEAD`'
+#alias gitpushup='git push -u $(git remote | grep -m 1 upstream || echo origin) `git symbolic-ref --short HEAD`'
+alias gitpushup='git push -u origin `git symbolic-ref --short HEAD`'
 alias pip='pip2'
 . ~/.temp_aliases
 
