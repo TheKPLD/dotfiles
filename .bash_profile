@@ -1,3 +1,11 @@
+include(){
+    if [[ ! -f $1 ]]
+    then
+        touch $1
+    fi
+    source $1
+}
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
@@ -46,3 +54,19 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+alias ls='ls -G'
+alias ldapsearch='ldapsearch -LLLQ'
+if ! which strace >>/dev/null && which dtruss >>/dev/null
+then
+    alias strace='dtruss'
+fi
+if ! which md5sum >>/dev/null && which md5 >>/dev/null
+then
+    alias md5sum='md5'
+fi
+alias secho='stty echo'
+alias rsync='rsync --exclude=".git*" --exclude="*.pyc"'
+alias gitpushup='git push -u origin `git symbolic-ref --short HEAD`'
+include('~/.profile')
+include('~/.aliases.tmp')
