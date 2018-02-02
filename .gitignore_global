@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
@@ -34,6 +35,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
 
+# Other stuff
 .idea/
 .iml
