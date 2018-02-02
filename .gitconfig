@@ -181,6 +181,5 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-[user]
-	email = kdion@twilio.com
-	name = Kyle Dion
+[include]
+    path = "~/.gituser"
