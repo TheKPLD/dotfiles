@@ -68,5 +68,6 @@ fi
 alias secho='stty echo'
 alias rsync='rsync --exclude=".git*" --exclude="*.pyc"'
 alias gitpushup='git push -u origin `git symbolic-ref --short HEAD`'
+ssh-add -A 2>>/dev/null
 include ~/.profile
 include ~/.aliases.tmp
