@@ -1,0 +1,1 @@
+get rid of bundles in .vim, make pathogen and stuff happen from interwebs
