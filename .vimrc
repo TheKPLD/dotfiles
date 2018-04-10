@@ -9,6 +9,7 @@ set nu
 " General settings
 syntax on
 filetype plugin indent on
+set backspace=indent,eol,start
 
 " Extra whitespace highlighting out of insert mode
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen

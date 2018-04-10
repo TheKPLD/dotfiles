@@ -1,9 +1,10 @@
 include(){
-    if [[ ! -f $1 ]]
+    if [[ -f $1 ]]
     then
+        source $1
+    else
         touch $1
     fi
-    source $1
 }
 
 # Add `~/bin` to the `$PATH`
@@ -71,3 +72,8 @@ alias gitpushup='git push -u origin `git symbolic-ref --short HEAD`'
 ssh-add -A 2>>/dev/null
 include ~/.profile
 include ~/.aliases.tmp
+
+if [[ -d "$HOME/.rvm/bin" ]]
+then
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
