@@ -40,3 +40,4 @@ Desktop.ini
 # Other stuff
 .idea/
 *.iml
+venv/

@@ -149,3 +149,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 alias ssh='ssh -A -X'
+alias pep8='pycodestyle'
+
+alias branch='git symbolic-ref --short HEAD'
