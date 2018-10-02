@@ -152,3 +152,4 @@ alias ssh='ssh -A -X'
 alias pep8='pycodestyle'
 
 alias branch='git symbolic-ref --short HEAD'
+alias ldifstrip="tr '\n' '|' | sed 's/|\s\+//g' | tr '|' '\n'"
