@@ -8,6 +8,18 @@ export NODE_REPL_HISTORY_SIZE='32768';
 # Use sloppy mode by default, matching web browsers.
 export NODE_REPL_MODE='sloppy';
 
+# Unlimited bash history size
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+# Change filename so shells not aware of the above don't truncate
+export HISTFILE=~/.history
+# Write out history at every command prompt
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Ignore common commands
+export HISTIGNORE='ls:history:pwd:exit:[bf]g:clear:reset:df:reload:alias:cd:cd \.\.:echo $?'
+
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';
 
