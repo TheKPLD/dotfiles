@@ -148,9 +148,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias ssh='ssh -A -X'
 alias pep8='pycodestyle'
 
-alias branch='git symbolic-ref --short HEAD'
-alias ldifstrip="tr '\n' '|' | sed 's/|\s\+//g' | tr '|' '\n'"
-
 if [ -x $(which gdate) ]; then
     alias date=gdate
 fi

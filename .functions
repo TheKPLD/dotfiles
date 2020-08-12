@@ -250,5 +250,22 @@ function tre() {
 # each time we create a new login shell
 function reload() {
     PROMPT_COMMAND=$( echo "${PROMPT_COMMAND}" | sed 's/ *update_terminal_cwd;\{0,1\}//')
-    exec $SHELL -l
+    exec "$SHELL" -l
 }
+
+function branch() { git symbolic-ref --short HEAD; }
+export -f branch
+
+# Unwrap lines in LDIF to make it easier to process
+function unwrapldif() {
+    IFS=''
+    shopt -s extglob
+    while read ldif_line; do
+        if [[ "$ldif_line" == \ * ]]; then
+            printf "%s" "${ldif_line##*( )}"
+        else
+            printf "\n%s" "$ldif_line"
+        fi
+    done
+}
+export -f unwrapldif
