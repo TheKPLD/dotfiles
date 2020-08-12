@@ -14,8 +14,10 @@ export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 # Change filename so shells not aware of the above don't truncate
 export HISTFILE=~/.history
-# Write out history at every command prompt
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# Write out history and re-read at every command prompt
+if ! echo "$PROMPT_COMMAND" | grep -q 'history -a; history -c; history -r'; then
+    export PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}";
+fi
 
 # Ignore common commands
 export HISTIGNORE='ls:history:pwd:exit:[bf]g:clear:reset:df:reload:alias:cd:cd \.\.:echo $?'
