@@ -8,7 +8,7 @@ include(){
 }
 
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/bin:$PATH:$HOME/go/bin";
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -34,12 +34,14 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
+: '
 # Add tab completion for many Bash commands
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
 	source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
+: '
 
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
@@ -71,7 +73,7 @@ alias rsync='rsync --exclude=".git*" --exclude="*.pyc"'
 alias gitpushup='git push -u origin `git symbolic-ref --short HEAD`'
 ssh-add -A 2>>/dev/null
 include ~/.profile
-include ~/.aliases.tmp
+include ~/.bashrc_local
 
 if [[ -d "$HOME/.rvm/bin" ]]
 then
