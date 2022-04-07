@@ -148,6 +148,4 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias ssh='ssh -A -X'
 alias pep8='pycodestyle'
 
-if [ -x $(which gdate) ]; then
-    alias date=gdate
-fi
+alias convert_ad_time="xargs -I{} echo '{}/10000000-11644473600' | bc | xargs -I{} date -r {}"
