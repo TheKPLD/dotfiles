@@ -182,8 +182,8 @@ brew install pkg-config
 brew install popt
 brew install postgresql
 brew install pyenv
-brew install python
-brew install python3
+#brew install python
+#brew install python3
 brew install readline
 brew install redis
 brew install rpm
